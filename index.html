@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Kannamma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Audio Player (Local MP3) -->
+    <audio id="bg-music" loop>
+        <source src="assets/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Welcome Overlay (Click to Enter) -->
+    <div id="welcome-overlay">
+        <!-- New Welcome Image -->
+        <div class="welcome-image-container">
+            <img src="assets/photo2.jpeg" alt="Happy Birthday">
+        </div>
+
+        <h1 class="romantic-font" style="font-size: 3rem; margin-bottom: 30px; animation: pulse 3s infinite;">For You
+        </h1>
+        <button class="enter-btn" onclick="enterSite()">Click to Enter</button>
+    </div>
+
+    <!-- UI Controls -->
+    <div class="ui-controls">
+        <div class="control-btn" onclick="toggleTheme()" title="Toggle Theme">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+        <div class="control-btn" onclick="toggleMusic()" title="Play Music">
+            <i class="fas fa-play" id="music-icon"></i>
+        </div>
+    </div>
+
+    <!-- Note Modal -->
+    <div id="noteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 class="romantic-font" style="font-size: 3rem; margin-bottom: 20px;">My Heart's Voice</h2>
+            <div style="text-align: left; line-height: 1.8; font-size: 1.1rem; max-height: 60vh; overflow-y: auto;">
+                <p>Dearest Kannamma,</p>
+                <br>
+                <p>Happy Birthday, my love! Today isn't just another day; it's the day the world became a little
+                    brighter because you were born.</p>
+                <br>
+                <p>Looking at you, I see my future, my happiness, and my home. You have this incredible way of making
+                    everything better just by being there. On this special day, I wish you all the happiness your heart
+                    can hold.</p>
+                <br>
+                <p>May this year bring you closer to your dreams. I promise to be there every step of the way, cheering
+                    you on, holding your hand, and loving you more than yesterday.</p>
+                <br>
+                <p>I love you, infinitely.</p>
+            </div>
+            <div class="signature"
+                style="margin-top: 20px; font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--accent-color);">
+                Happy Birthday!</div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <!-- Slideshow Background (Above Happy Birthday) -->
+        <div class="slide active" style="background-image: url('assets/photo1.jpg'); background-color: #222;"></div>
+        <div class="slide"
+            style="background-image: url('assets/🌙\ “Under\ this\ sky\,\ it’s\ just\ you\ and\ me_\ ❤️.jpeg'); background-color: #333;">
+        </div>
+        <div class="slide" style="background-image: url('assets/photo3.jpeg'); background-color: #333;"></div>
+        <div class="slide" style="background-image: url('assets/photo4.jpeg'); background-color: #444;"></div>
+        <div class="slide" style="background-image: url('assets/photo5.jpg'); background-color: #444;"></div>
+        <div class="slide" style="background-image: url('assets/download.jpg'); background-color: #555;"></div>
+        </div>
+
+        <div class="bg-hearts" id="hearts-container"></div>
+
+        <div class="hero-content">
+            <h1 class="romantic-font" style="font-size: 3rem; color: var(--heart-color); margin-bottom: 15px;">Dearest
+            </h1>
+            <h1 style="font-size: 4.5rem; line-height: 1.1;">Happy Birthday <br> <span class="romantic-font"
+                    style="font-size: 6rem; color: var(--accent-color);">Kannamma</span></h1>
+            <p style="font-size: 1.4rem; font-style: italic; margin-top: 20px;">"You are the poem I never knew how to
+                write..."</p>
+
+            <button class="enter-btn" style="margin-top: 30px; font-size: 1.2rem; padding: 15px 40px;"
+                onclick="openModal()">
+                Read My Note <i class="fas fa-heart" style="margin-left: 10px;"></i>
+            </button>
+        </div>
+
+        <div class="scroll-down" onclick="scrollToGallery()">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Moments</h2>
+            <div class="gallery-grid">
+                <!-- Gallery Items with Captions -->
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (1).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">The beautiful moment where our journey began, holding hands and never letting go.
+                    </p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (13).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Your smile is my daily dose of sunshine, lighting up my darkest days.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (3).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">The way your eyes twinkle when you laugh is the most precious sight in the world.
+                    </p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (4).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Every adventure with you is a memory etched in my heart forever.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (5).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Just sitting beside you creates a magic that no words can describe.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (6).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">I promise to be yours, through every sunrise and every sunset, forever.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (7).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Laughing at our silly jokes and sharing crazy moments—this is what love feels
+                        like.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (8).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">In a world of chaos, you are my calm, my peace, and my only love.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (9).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">You are my everything, my today and all of my tomorrows.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (10).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Just you and me, against the world, building our own little paradise.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (11).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Life is simply better when we are together—two souls, one heartbeat.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (12).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">My love for you is as endless as the ocean and as bright as the stars.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (14).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">With you, every moment is a celebration of love.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (15).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">You are the melody to my life's song, playing on repeat.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (16).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">My heart skips a beat every time I see you smile.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (17).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Together is my favorite place to be, now and forever.</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-text"></div>
+                    <img src="assets/photo6 (2).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Wrapped in your arms is the only home I need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Button -->
+    <div style="text-align: center; margin: 50px 0;">
+        <button class="enter-btn" style="background: rgba(255, 255, 255, 0.05);" onclick="scrollToExperience()">
+            My Life's Experience <i class="fas fa-star" style="margin-left: 10px;"></i>
+        </button>
+    </div>
+
+    <!-- Experience Section -->
+    <section class="gallery-section" id="experience" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <h2 class="section-title">A Lifetime with You</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/Coorg_%20Scotland%20Of%20India.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Exploring the Scotland of India together.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Kedarnath%20Darshan,%20Uttarakhand.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Finding peace in the mountains of Kedarnath.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/8%20Must%20Visit%20Places%20In%20Goa%20During%20Monsoons.jpeg"
+                        onerror="this.style.display='none'">
+                    <p class="caption">Monsoon magic in Goa—unforgettable rains.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/couple%20romance.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Every romantic moment is a treasure.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/couple%20illustration.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Our love, painted in the colors of joy.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photo18.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Simple moments, lasting memories.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Devprayag,%20Uttrakhand%F0%9F%8F%9E%F0%9F%8C%8E%F0%9F%94%A5%F0%9F%A4%8D.jpeg"
+                        onerror="this.style.display='none'">
+                    <p class="caption">Divine confluence at Devprayag.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Munroe%20Island%20Kerala%20backwaters%20homestay%20%F0%9F%8C%B4%20Why%20it's%20the%20best!%20%F0%9F%8C%B4%20Kerala%20backwaters%20in%20India%20-%20Flashpacking%20Kerala.jpeg"
+                        onerror="this.style.display='none'">
+                    <p class="caption">Serenity in Kerala's backwaters.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Encantadoras%20ilustraciones%20capturan%20momentos%20cotidianos%20de%20amor%20entre%20parejas.jpeg"
+                        onerror="this.style.display='none'">
+                    <p class="caption">Captured moments of pure love.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ghiblify%20love%20%F0%9F%92%95.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Our fairytale love story.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/us%E2%99%A1.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Just us, forever.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/%F0%9F%91%A5%F0%9F%92%97.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Two hearts, one soul.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Pin%20page.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">A moment to remember.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/%F0%9F%92%8C%20%F0%9D%90%92%F0%9D%90%84%F0%9D%90%8B%F0%9D%90%88%F0%9D%90%8D%F0%9D%90%80%20%F0%9F%92%8C.jpeg"
+                        onerror="this.style.display='none'">
+                    <p class="caption">Love notes and happy memories.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Couple%20%E2%9D%A4.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Love fits us perfectly.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Travel%20Essentials%20for%202025%20%E2%9C%88%EF%B8%8F%20_%20Beauty,%20Fashion%20%26%20Smart%20Luggage%20Must-Haves.jpeg"
+                        onerror="this.style.display='none'">
+                    <p class="caption">Planning our next great escape.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/download%20(2).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Every picture tells a story of us.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/download%20(3).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Moments that take my breath away.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/download%20(4).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Happiness is making memories with you.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/download%20(5).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">You are my favorite adventure.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/download%20(6).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Captured smiles and endlessly happy days.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/download%20(7).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">The best things in life are the people we love.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/download%20(8).jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Together is a beautiful place to be.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Indian%20Fort.jpeg" onerror="this.style.display='none'">
+                    <p class="caption">Majestic echoes of history in every stone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-box slide-down-hidden">
+                <p class="quote-text">"I look at you and see the rest of my life in front of my eyes."</p>
+                <p class="quote-author">- Forever Yours Shivani</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px; color: #777; font-style: italic;">
+                Made with Love
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</body>
+
+</html>
